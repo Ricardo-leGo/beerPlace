@@ -2,7 +2,16 @@ const router = require('express').Router();
 const passport = require('../config/passport')
 const User = require('../models/User')
 
+const {confirmAccount}= require ('../config/nodemailer')
+
 /* GET home page */
+
+//nodemailer.
+const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let token = '';
+for (let i = 0; i < 25; i++) {
+    token += characters[Math.floor(Math.random() * characters.length )];
+}
 
 router.get('/', (req, res, next) => {
   let config = {
@@ -73,16 +82,20 @@ User.findOne({email})
       })
 
 
-      User.register({email,name}, password)
+      User.register({email,name,token}, password)
       .then(userCreated =>{
+        
         res.redirect('/verify')
       })
       .catch(error=> {
         next(error)
       })
 
-
-})
+      confirmAccount(
+        email, 
+         `http://localhost:3000/verify:${token}`)
+      
+      })
 
 
 

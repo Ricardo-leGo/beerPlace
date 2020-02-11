@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     email:    String,
     name:     String,
-    slakID:   String,
+    token:    String,
     googleID: String,
     image: {
       type:String,
