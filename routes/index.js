@@ -3,20 +3,32 @@ const passport = require('../config/passport')
 const User = require('../models/User')
 
 /* GET home page */
-console.log(passport+'estoy en routes');
 
 router.get('/', (req, res, next) => {
-  res.render('index');
+  let config = {
+    menuOut:false,
+    styles:'login.css'
+
+  }
+  res.render('index', config);
 });
-
-
 
 router.get('/signup', (req,res,next)=>{
   res.render('passport/signup')
 })
 
 router.get('/login',(req,res)=> {
-  res.render('passport/login', {message: 'El correo '})
+
+  if(passport.authenticate()){
+    let config = {
+      menuOut:true,
+      styles:'login.css'
+
+    }
+    res.render('passport/login', config )
+
+  }
+  res.render('passport/login')
 })
 
 
@@ -25,7 +37,13 @@ router.get('/verify',(req,res)=> {
 })
 
 router.get('/dashboard',(req,res)=> {
-  res.render('dashboard', {message: 'El correo '})
+  let config = {
+    menuOut:true,
+    styles:'dashboard.css'
+
+  }
+
+  res.render('dashboard', config)
 })
 router.post(
   '/login',
@@ -57,7 +75,6 @@ User.findOne({email})
 
       User.register({email,name}, password)
       .then(userCreated =>{
-        console.log(userCreated)
         res.redirect('/verify')
       })
       .catch(error=> {
@@ -70,7 +87,6 @@ User.findOne({email})
 
 
 router.post('/confirm', (req,res, netx)=>{
-  console.log(`${req} no hago nada`)
   res.redirect('/')
 })
 

@@ -5,8 +5,6 @@
 
 
 <h1>Regístrate</h1>
-
-<form action="/signup" method="POST" id="form-container">
   <label for="name">Nombre:</label>
   <input id="name" type="text" name="name" placeholder="Nombre" />
   <br /><br />
@@ -24,23 +22,18 @@
   {{!-- <button>Create account</button> --}}
   <input type="submit" value="Registro" >
 
-  <p class="account-message">
-   ¿Ya tienes cuenta?
-    <a href="/login">Regístrate</a>
-  </p>
+
 </form>
 
 <hr>
 <h1>Ingresa</h1>
-
 <form action="/login" method="POST" id="form-container">
-  <label for="email">Email:</label>
+<label for="email">Email:</label>
   <input id="email" type="email" name="email" placeholder="Correo" />
   <br /><br />
   <label for="password">Contraseña:</label>
   <input id="password" type="password" name="password" placeholder="Contraseña" />
-
-  {{#if message}}
+{{#if message}}
      <div class="error-message">{{message}}</div>
    {{/if}}
   <br><br>
@@ -48,10 +41,7 @@
   {{!-- <button>Create account</button> --}}
   <input type="submit" value="Entra">
 
-  <p class="account-message">
- ¿Aún no tienes cuenta?
-    <a href="/signup">Crea tu cuenta</a>
-  </p>
+
 </form>
 
 

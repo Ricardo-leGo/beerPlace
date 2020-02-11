@@ -4,7 +4,13 @@ const User = require('../models/User')
 
 
 
-router.get('/profile', (req, res)=>res.render('secretRoutes/profile') )
+router.get('/profile', (req, res)=>{
+    let config = {
+        menuOut:true,
+        styles:'profile.css'
+    
+      }
+    res.render('secretRoutes/profile', config)} )
 
 
 module.exports = router
