@@ -18,8 +18,7 @@ const transporter = nodemailer.createTransport({
 })
 
 exports.confirmAccount = async (to, endpoint) => {
-  console.log("to", to);
-  
+
   return await transporter.sendMail({
     from: "hola@legoricardo.com",
     to,

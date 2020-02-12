@@ -41,10 +41,6 @@ app.use(passport.session());
 
 
 
-app.use((req, res, next) => {
-  console.log(req.user);
-  next();
-});
 
 // Middleware Setup
 app.use(logger('dev'));
