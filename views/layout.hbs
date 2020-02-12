@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Josefin+Sans|Modak&display=swap" rel="stylesheet"> 
+
   <link rel="stylesheet" href="/stylesheets/{{styles}}" />
 </head>
 <body>
-  <a href="/">Home</a>
+
+
+  <nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Admin Panel</a></li>
+    {{!-- <li><a href="#">Shoping</a></li> --}}
+  </ul>
+</nav>
+
 {{#if menuOut}}
   <a href="/logout">Salir</a>
   {{/if}}

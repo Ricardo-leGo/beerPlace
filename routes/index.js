@@ -2,6 +2,8 @@ const router = require('express').Router();
 const passport = require('../config/passport')
 const User = require('../models/User')
 
+
+
 const {confirmAccount}= require ('../config/nodemailer')
 
 /* GET home page */
@@ -41,19 +43,16 @@ router.get('/login',(req,res)=> {
 })
 
 
+router.get('/dashboard', (req,res,next)=>{
+  res.render('dashboard')
+})
+
 router.get('/verify',(req,res)=> {
   res.render('confirm', {message: 'El correo '})
 })
 
-router.get('/dashboard',(req,res)=> {
-  let config = {
-    menuOut:true,
-    styles:'dashboard.css'
 
-  }
 
-  res.render('dashboard', config)
-})
 router.post(
   '/login',
   passport.authenticate("local", {

@@ -1,4 +1,4 @@
-const Location = require ('../models/Location')
+const Location = require ('../models/Places')
 
 exports.createGet = (req, res) => {
     res.render('secretRoutes/create-location')

@@ -1,0 +1,88 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    width: 100vw;
+    height: 7vh;
+    margin: 0 0 2% 0;
+    padding: 0;
+    margin: 0;
+
+}
+nav>ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    width:100%;
+    height: auto;
+
+
+}
+nav>ul>li{
+        margin: 0;
+        padding: 1.5%;
+}
+
+nav>ul>li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:#D99;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+
+
+
+#formNavContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+#form_register{
+    width: 45vw;
+    height: 60vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+
+    position: absolute;
+    left: 50%;
+    padding: 2%;
+
+    
+}
+#form_register>h1{
+text-align: center;
+}
+#form_register>input{
+    margin: 2% auto;
+    width:70%;
+    height: 7vh;
+    border: transparent;
+    border-bottom: black;
+    padding-left: 10%;
+}
+#submitregister{
+    text-align: center;
+
+}
+#form_login{
+    width:60%;
+    height: 10vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#form_login>h1{
+    font-size: .9rem;
+    color:red;
+}
