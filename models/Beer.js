@@ -1,17 +1,24 @@
 const {model, Schema} = require('mongoose')
 
-const beerSchema = new Schema(
+const beerSchema = new Schema (
   {
     name: String,
-    typeBeer: String,
-    subtypeBeer: String,
-    description: String,
-    location: [
-      {
-      type:Schema.Types.ObjectId,
-      ref: 'Location'
+    typeBeer: {
+      type: String,
+      subtypeBeer: {
+        type: String
       }
-    ],
+    },
+    
+    description: String,
+    location: {
+      address: {
+        type: String
+      },
+      coordinates: {
+        type: [Number]
+      }
+    },
     image: String
   },
   {
@@ -20,4 +27,4 @@ const beerSchema = new Schema(
   }
 )
 
-module.exports = model('beer', beerSchema)
+module.exports = model('Beer', beerSchema)
