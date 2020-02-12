@@ -4,7 +4,6 @@ const beerSchema = new Schema (
   {
     name: String,
     typeBeer: {
-      type: String,
       subtypeBeer: {
         type: String
       }

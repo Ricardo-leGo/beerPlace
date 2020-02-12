@@ -84,5 +84,9 @@ app.use('/', passportRouter);
 /* Auth Routes */
 app.use('/',auth ,require('./routes/profile'))
 
+app.use('/', require('./routes/createLocationRoutes'))
+
+app.use('/', require('./routes/beerRoutes'))
+
 
 module.exports = app;

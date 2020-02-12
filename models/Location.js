@@ -10,7 +10,11 @@ const locationSchema = new Schema (
       coordinates: {
         type: [Number]
       }
-    }
+    },
+    beers: [{
+      type : Schema.Types.ObjectId,
+      ref: 'Beer'
+    }]
   },
   {
     timestamps: true,
