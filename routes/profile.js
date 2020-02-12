@@ -15,4 +15,6 @@ router.get('/profile', async (req, res)=>{
     res.render('secretRoutes/profile', config)} )
 
 
+
+
 module.exports = router

@@ -12,6 +12,7 @@ const session      = require('express-session')
 const passport     = require('./config/passport')
 const flash        =require('connect-flash')
 const {auth}           =require('./middleware/midAuthenticate')
+const fs         =require('fs')
 
 
 mongoose
@@ -63,7 +64,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
-
 // default value for title local
 app.locals.title = 'Gall';
 
@@ -82,7 +82,11 @@ app.use('/', passportRouter);
 
 
 /* Auth Routes */
-app.use('/',auth ,require('./routes/profile'))
+app.use('/'    ,auth ,require('./routes/profile'))
+
+app.use('/'    ,auth ,require('./routes/dashboard'))
+app.use('/', auth, require('./routes/createLocationRoutes'))
+app.use('/profile',auth,require('./routes/dashboard'))
 
 app.use('/', require('./routes/createLocationRoutes'))
 
