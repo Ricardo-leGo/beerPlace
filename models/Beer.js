@@ -8,7 +8,10 @@ const beerSchema = new Schema (
         type: String
       }
     },
-    
+    places:[{
+      type: Schema.Types.ObjectId,
+      ref: 'Places'
+    }],
     description: String,
     image: String
   },

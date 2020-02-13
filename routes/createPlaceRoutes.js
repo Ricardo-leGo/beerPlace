@@ -5,7 +5,8 @@ const {
   createGet,
   createPost,
   placeGet,
-  profileGet
+  profileGet,
+  getPlacess
 } = require("../controllers/placeControllers");
 
 router
@@ -14,6 +15,7 @@ router
   //estas rutas van a esperar la vista hacia que pantalla queremos que se ven con el mapa
  .get('/place/:id', placeGet)
   //.get('/profile', profileGet)
+  .get('/placess', getPlacess)
 
 module.exports = router;
 

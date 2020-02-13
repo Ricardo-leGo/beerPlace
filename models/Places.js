@@ -11,7 +11,7 @@ const placesSchema = new Schema (
         type: [Number]
       }
     },
-    beers: [{
+    beers:[{
       type : Schema.Types.ObjectId,
       ref: 'Beer'
     }]

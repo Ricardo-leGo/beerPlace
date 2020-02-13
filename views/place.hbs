@@ -2,11 +2,6 @@
     aquí está place
 </h2>
 
-{{!-- {{#each Places}}
-{{/each}} --}}
-<h3>{{name}}</h3>
-<p>{{location.address}}</p>
-
 <div id='mapDetail' style='width: 400px; height: 300px;'></div>
 
 <script>
@@ -21,3 +16,14 @@ new mapboxgl.Marker()
             .setLngLat([ {{location.coordinates}} ])
             .addTo(map)
 </script>
+{{!-- {{#each Places}}
+{{/each}} --}}
+<h3>{{name}}</h3>
+<p>{{location.address}}</p>
+
+<h2>beers</h2>
+{{#each beers}}
+  {{this.name}} <br>
+  <img src="{{this.image}}" alt="nor found">
+  <p><a href="/beer/{{this._id}}">Ver cerveza</a></p>
+{{/each}}

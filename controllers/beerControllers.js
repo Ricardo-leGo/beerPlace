@@ -16,37 +16,52 @@ exports.createGet = async (req, res) => {
   
   // const arreglo = getPlaces
   // console.log(arreglo)
-  res.render('secretRoutes/create-Beer')
+  res.render('secretRoutes/create-Beer', {placesArray})
 }
 
 exports.createPost = async (req, res) => {
-  // console.log( req.body )
-  // const arrID = []
-  // if(req.body.name === 'true'){
-  //   arrID.push({_id})
-  // }
-  // console.log(arrID)
-  
-  const { name, typeBeer, subtypeBeer, description, longitude, latitude,  image} = req.body
-  const newBeer = {
+  const { name, typeBeer, subtypeBeer, description, image} = req.body
+  //const {_id} =req.body
+
+  const places = []
+  Object.keys(req.body).forEach( beer => (beer.split('-')[0] === 'beer') ? places.push(beer.split('-')[1]) : null  )
+  console.log('Places ', places)
+
+  const beer ={
     name,
     typeBeer,
     subtypeBeer,
     description,
-    image
+    image,
+    places
   }
+  const newBeer = await Beer.create(beer)
+  places.forEach( async place => {
+    await Place.updateOne({_id: place}, {$push: {beers: newBeer._id}}, {new: true})
+  })
+  
   //console.log(newPlace)
-  const { _id } = await Beer.create(newBeer)
+  // const {} = await Beer.create(newBeer)
 
   
-  res.redirect(`/beer/${_id}`)
+  res.redirect(`/beer/${newBeer._id}`)
 }
 
 exports.beerGet = async (req, res) => {
-  const { id } = req.params
-  const beer  = await Beer.findById(id)
+  const {id } = req.params
+  const beer  = await Beer.findOne({_id: id}).populate('places')
+  console.log(beer);
+  
   res.render('beer', beer)
 }
+
+exports.beersGet = async (req, res) =>{
+  const beers = await Beer.find()
+  //console.log(beers);
+  
+  res.render('beers', {beers})
+}
+
 
 exports.profileGet = async (req, res) => {
   res.render('profile')

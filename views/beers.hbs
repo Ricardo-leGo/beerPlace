@@ -1,0 +1,7 @@
+<h2>beers</h2>
+{{#each beers}}
+    <p><b>Nombre:</b>{{ this.name}} </p>
+    
+    <p><a href="/beer/{{this._id}}">Ver beer</a></p>
+
+{{/each}}
