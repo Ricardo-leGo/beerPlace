@@ -1,20 +1,40 @@
-const {model, Schema} = require ('mongoose')
+const { model, Schema } = require('mongoose')
 
-const eventsSchema = new Schema (
+const eventsSchema = new Schema(
   {
-    name: String,
+    name: {
+      type: String,
+      required: true
+    },
     location: {
-      address:{
-        type: String
+      address: {
+        type: String,
+        required: true
       },
       coordinates: {
-        type: [Number]
-      }    
+        type: [Number],
+        required: true
+      }
     },
-    date: Date,
-    descrition: String,
-    smallDescription: String
+    author: {
+      type: String,
+      required: true
+    },
+    namePlace: {
+      type: String,
+      required: true
+    },
+    image:{
+      type:String,
+      required:true
+    },
+    description:String,
+    smallDescription:String
+  },
+  {
+    timestamps: true,
+    versionKey: false
   }
 )
 
-module.exports = model ('Events', eventsSchema)
+module.exports = model('events', eventsSchema)

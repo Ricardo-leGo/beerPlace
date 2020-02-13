@@ -71,7 +71,7 @@ router.post('/signup', (req,res,next)=> {
   }
 
 
-User.findOne({email})
+  User.findOne({email})
       .then(user=> {
         if (user !== null){
           return res.render('confirm')
@@ -106,6 +106,11 @@ router.get('/logout', (req, res)=>{
   req.logout();
   res.redirect('/')
 })
+
+
+
+
+
 
 
 module.exports = router

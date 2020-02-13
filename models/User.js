@@ -11,13 +11,6 @@ const userSchema = new Schema(
       default:`https://i.picsum.photos/id/${varImg}/400/400.jpg`
     },
     token:    String,
-    googleID: String,
-    image: {
-      type:String,
-      enum:["admin", "invited"],
-      default: "invited"
-    }
-
   },
   {
     timestamps: true

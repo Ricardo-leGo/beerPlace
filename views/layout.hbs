@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Josefin+Sans|Modak&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Josefin+Sans|Modak&display=swap" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+
 
   <link rel="stylesheet" href="/stylesheets/{{styles}}" />
 
@@ -33,6 +37,9 @@ crossorigin="anonymous"></script>
 
 </head>
 <body>
+<<<<<<< HEAD
+{{>navbar}}
+=======
 
 
   <nav>
@@ -47,8 +54,9 @@ crossorigin="anonymous"></script>
   </ul>
 </nav>
 
+>>>>>>> 4d644711eb5cc9ae0550cc0774ba17a46bc9fc03
 {{#if menuOut}}
-  <a href="/logout">Salir</a>
+  <a href="/logout" id="logOut">Salir</a>
   {{/if}}
 
   {{{body}}}
