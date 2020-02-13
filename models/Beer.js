@@ -10,14 +10,6 @@ const beerSchema = new Schema (
     },
     
     description: String,
-    location: {
-      address: {
-        type: String
-      },
-      coordinates: {
-        type: [Number]
-      }
-    },
     image: String
   },
   {
