@@ -76,12 +76,6 @@ app.use('/', index);
 
 const passportRouter = require("./routes/passportRouter");
 app.use('/', passportRouter);
-
-
-
-
-
-
 /* Auth Routes */
 app.use('/', auth ,require('./routes/profile'))
 
