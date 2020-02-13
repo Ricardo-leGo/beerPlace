@@ -12,6 +12,10 @@ const PlacesSchema = new Schema (
       }
      
     },
+    beers:[{
+      type : Schema.Types.ObjectId,
+      ref: 'Beer'
+    }],
     name:String
   },
   {

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const passport = require('../config/passport')
 const User = require('../models/User')
-
+const beers = require('../models/Beer')
+const place = require('../models/Places')
 
 
 const {confirmAccount}= require ('../config/nodemailer')
@@ -43,7 +44,11 @@ router.get('/login',(req,res)=> {
 })
 
 
-router.get('/dashboard', (req,res,next)=>{
+router.get('/dashboard', async (req,res,next)=>{
+  const birras = await beers.find()
+  const location = await place.find()
+  console.log(location)
+  console.log(birras)
   res.render('dashboard')
 })
 

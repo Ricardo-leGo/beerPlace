@@ -16,7 +16,7 @@ const fs         =require('fs')
 
 
 mongoose
-  .connect('mongodb+srv://rish:12345@cluster0-hk8go.mongodb.net/myApp?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true })
+  .connect('mongodb+srv://rish:1573goriot@cluster0-hk8go.mongodb.net/myApp?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
