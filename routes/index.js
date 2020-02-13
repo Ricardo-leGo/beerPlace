@@ -48,6 +48,8 @@ router.get('/dashboard', async (req,res,next)=>{
   const birras = await beers.find()
   const location = await place.find()
   console.log(location)
+  console.log("****************************************************************************************************************");
+  
   console.log(birras)
   res.render('dashboard')
 })
