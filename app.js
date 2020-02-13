@@ -83,11 +83,15 @@ app.use('/', passportRouter);
 
 
 /* Auth Routes */
-app.use('/'    ,auth ,require('./routes/profile'))
+app.use('/', auth ,require('./routes/profile'))
 
-app.use('/'    ,auth ,require('./routes/dashboard'))
-app.use('/', auth, require('./routes/createLocationRoutes'))
+app.use('/', auth ,require('./routes/dashboard'))
+app.use('/', auth, require('./routes/createPlaceRoutes'))
 app.use('/profile',auth,require('./routes/dashboard'))
+
+app.use('/', require('./routes/createPlaceRoutes'))
+
+app.use('/', require('./routes/beerRoutes'))
 
 
 module.exports = app;
