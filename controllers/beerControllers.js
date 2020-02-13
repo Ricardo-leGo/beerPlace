@@ -1,8 +1,19 @@
 const Beer = require('../models/Beer')
+const Place = require('../models/Places')
 //const { Router } = require("express")
 
-exports.createGet = (req, res) => {
+exports.createGet = async (req, res) => {
+  const placesArray = []
+  await Place.find({}, function(err,places){
+    places.forEach(
+      function(place){
+        placesArray.push(place)
+        console.log(place)
+      }
+    )
+  })
 
+  
   // const arreglo = getPlaces
   // console.log(arreglo)
   res.render('secretRoutes/create-Beer')
@@ -15,7 +26,6 @@ exports.createPost = async (req, res) => {
   //   arrID.push({_id})
   // }
   // console.log(arrID)
-
   
   const { name, typeBeer, subtypeBeer, description, longitude, latitude,  image} = req.body
   const newBeer = {
@@ -27,6 +37,8 @@ exports.createPost = async (req, res) => {
   }
   //console.log(newPlace)
   const { _id } = await Beer.create(newBeer)
+
+  
   res.redirect(`/beer/${_id}`)
 }
 

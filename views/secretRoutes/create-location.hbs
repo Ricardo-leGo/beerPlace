@@ -1,5 +1,11 @@
-<section>
-  <h2>Add Beer Place</h2>
+<section id="beer-placer">
+
+  <div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4">Agrega un Beer Place</h1>
+    <p class="lead">¿Conoces algún lugar de cerveza artesanal y te gustaría compartirlo con nosotros?</p>
+</div>
+ 
+ 
   <form action="/create-location" method="POST">
 
     <input name="name" type="text" placeholder="Place name" />
@@ -8,6 +14,9 @@
 
 
     <div id='map' style='width: 400px; height: 300px;'></div>
+
+    
+
     <button class="button">Create</button>
     <input type="text" name="address" hidden>
     <input type="text" name="latitude" hidden>

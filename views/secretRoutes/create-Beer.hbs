@@ -33,8 +33,15 @@
  
     <input name="image" type="text" placeholder="Image" />
 
+      {{#each placesArray}}
+
+      <input type="text" name="name" value=" {{this}} " >
+
+
+      {{/each}}
+
    
-      <section>
+      {{!-- <section>
               
 
       <div class="card-preferences">
@@ -116,7 +123,7 @@
       <p>Fiebre Malta</p>
       <input type="checkbox" name="FiebreMalta" value="true"> 
       </div>
-      </section>
+      </section> --}}
       
     <button class="button">Create</button>
 
