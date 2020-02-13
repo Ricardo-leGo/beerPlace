@@ -6,16 +6,19 @@ const places = require('../models/Places')
 
 
 
-    const placesl =await places.find()
-      console.log(placesl)
-      
+
     let config = {
       menuOut:true,
-      styles:'dashboard.css', 
+      styles:'dashboard.css',
       privado:true
   
     }
-  
+
+    let objeto = {
+      places,
+      config
+    }
+
     res.render('secretRoutes/dashboard', config)
   }
   )

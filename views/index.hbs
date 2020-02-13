@@ -1,19 +1,16 @@
 
 
 <div id="formNavContainer">
-  <h1>BeerPlace</h1>
+  <h1></h1>
 
 <form action="/login" method="POST" id="form_login">
 <h1>Ingresa</h1>
   <input id="email" type="email" name="email" placeholder="Correo" />
   <input id="password" type="password" name="password" placeholder="Contraseña" />
-{{#if message}}
+    {{#if message}}
      <div class="error-message">{{message}}</div>
    {{/if}}
-  <br><br>
-
-  {{!-- <button>Create account</button> --}}
-  <input type="submit" value="Entra">
+<input type="submit" value="Entra" id="logSubmit">
 
 
 </form>
@@ -29,8 +26,6 @@
     <div class="error-message">{{ message }}</div>
   {{/if}}
   <br><br>
-
-  {{!-- <button>Create account</button> --}}
   <input type="submit" value="Registro" id="submitregister">
 
 
