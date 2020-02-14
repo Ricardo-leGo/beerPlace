@@ -3,6 +3,10 @@ const passport = require('../config/passport')
 const User = require('../models/User')
 const beers = require('../models/Beer')
 const place = require('../models/Places')
+const events = require('../models/Events')
+const {auth}           =require('../middleware/midAuthenticate')
+
+
 
 
 const {confirmAccount}= require ('../config/nodemailer')
@@ -22,7 +26,8 @@ router.get('/', (req, res, next) => {
  
   let config = {
     menuOut:false,
-    styles:'login.css'
+    styles:'login.css',
+    logged:false
 
   }
   let data = {
@@ -31,7 +36,7 @@ router.get('/', (req, res, next) => {
 
 
 
-  res.render('index', data);
+  res.render('index', {config, data});
 });
 
 router.get('/signup', (req,res,next)=>{
@@ -58,21 +63,30 @@ router.get('/dashboard', async (req,res,next)=>{
   const location = await place.find()
   let config = {
     menuOut: false,
-    styles:"dashboard.css"
+    styles:"dashboard.css",
+    
   }
   res.render('dashboard', {birras, location, config})
 })
 
 router.get('/dashboard:id', async (req,res,next)=>{
   const birras = await beers.find()
+  console.log(birras);
+  
+  console.log('*****************************************************************************')
   const location = await place.find()
+  console.log(location)  
+  console.log('*****************************************************************************')
+  const event = await events.find()
+  console.log(event)
+  console.log('*****************************************************************************')
   let config = {
     menuOut: false,
-    styles:"dashboard_details.css"
+    styles:"dashboard_details.css",
+    logged:true
   }
-
-  console.log({birras, location, config })
-  res.render('dashboard_details', {birras, location, config})
+console.log(req.params)
+  res.render('dashboard_details', {birras, location, config, event})
 })
 
 router.get('/verify',(req,res)=> {

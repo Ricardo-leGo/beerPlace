@@ -1,0 +1,41 @@
+body{
+    overflow-x: hidden;
+}
+
+h3{
+    text-align: center;
+}
+
+.eventcontainer{
+
+    margin: 0 auto;
+    width: 95vw,
+    height:95vh;
+        margin-top:2%;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    text-align:center;
+}
+
+ img{
+     width: 35vw;
+     height: auto;
+     margin: 0 auto;
+
+
+}
+
+
+.containerF{
+
+    background-color: green;
+
+
+}
+.beercontainer img  {
+
+    background-color: yellow;
+
+
+}

@@ -11,8 +11,8 @@ const path         = require('path');
 const session      = require('express-session')
 const passport     = require('./config/passport')
 const flash        =require('connect-flash')
-const {auth}           =require('./middleware/midAuthenticate')
-const fs         =require('fs')
+const {auth}       =require('./middleware/midAuthenticate')
+const fs           =require('fs')
 
 
 mongoose

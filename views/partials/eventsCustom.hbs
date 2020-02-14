@@ -1,0 +1,27 @@
+<h3>Eventos en el lugar</h3>
+
+<div class="eventcontainer">
+    {{#each event}}
+    <img src="{{this.image}}" alt="">
+    <h1>{{this.eventname}}</h1>
+    <span>{{this.description}}</span>
+    <p>{{this.author}}</p>
+        <hr>
+
+    {{/each}}
+    </div>
+<div class="containerF"></div>
+  <h2>Cervezas</h2>
+   
+
+    {{#each birras}}
+    <div class="beercontainer"></div>
+    <p>{{this.name}}</p>
+    <img src="{{this.image}}" alt="">
+    <p>{{this.description}}</p>
+     </div>
+    {{/each}}
+   
+  
+</div>
+    <hr>
