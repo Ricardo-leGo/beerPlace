@@ -5,8 +5,11 @@ body{
     
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     width: 90%;
     margin: 0 auto;
+
+
 
 
 
@@ -14,18 +17,23 @@ body{
 .containerCard{
 width: 20%;
 text-align: center;
-margin: .5% auto;
+margin: .5% .5%;
 box-sizing: border-box;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+
 
 }
 
 .containerCard>h1{
     font-size: 1.2rem;
-    width: 100%;
+    width: 80%;
+    text-align: center  ;
+    margin: 0 auto;
 }
 .containerCard>h2{
 font-size: .7rem;
-width:100%;
+width:90%;
+margin: 0 auto;
 }
 
 .containerCard .mapa{

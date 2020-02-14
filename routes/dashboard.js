@@ -10,7 +10,7 @@ const places = require('../models/Places')
     let config = {
       menuOut:true,
       styles:'dashboard.css',
-      privado:true
+      logged:true
   
     }
 
@@ -19,7 +19,7 @@ const places = require('../models/Places')
       config
     }
 
-    res.render('secretRoutes/dashboard', config)
+    res.render('secretRoutes/dashboard', {config, places})
   }
   )
 

@@ -2,9 +2,11 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/dashboard">Dashboard</a></li>
-    <li><a href="#">Events</a></li>
-    <li><a href="#">Admin Panel</a></li>
-    <li><a href="/profile/dashboard">profile Dashboard</a></li>
+    <li><a href="/profile">Profile</a></li>
+    {{#if config.logged}}
+    
+    <li><a href="/logout">Salir</a></li>
+    {{/if}}
     {{!-- <li><a href="#">Shoping</a></li> --}}
   </ul>
 </nav>

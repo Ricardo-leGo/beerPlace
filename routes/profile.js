@@ -11,13 +11,16 @@ const {createPost} = require('../controllers/beerControllers')
 
 
 router.get('/profile', async (req, res)=>{
-
-  let user = await User.find({})
+const { _id } = req.user
+    let user = await User.findById({_id})
+  
   let config = {
       menuOut:true,
-      styles:'profile.css'
+      styles:'profile.css',
+      logged:true
 
     }
+
     res.render('secretRoutes/profile', {config, user})
   } )
 
