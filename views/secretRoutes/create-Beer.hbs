@@ -30,7 +30,9 @@
 
       {{#each placesArray}}
 
-      <input type="text" name="name" value=" {{this}} " >
+      <input type="checkbox" name="beer-{{this._id}}"  value="{{this._id}}" >
+      <p >{{this.name}}</p>
+      
 
 
       {{/each}}

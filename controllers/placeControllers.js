@@ -21,7 +21,9 @@ exports.createGet = (req, res) => {
   exports.placeGet = async (req, res) => {
     //console.log(req.params)
     const { id } = req.params
-    const place = await Place.findById(id)
+    const place = await Place.findById(id).populate('beers')
+    console.log('Place aqui', place);
+    
     res.render('place', place)
   }
 
@@ -33,6 +35,12 @@ exports.createGet = (req, res) => {
 
   exports.getPlaces = async (req,res) => {
     const places = await Place.collection
+  }
+
+  exports.getPlacess = async (req,res)=>{
+    const places = await Place.find()
+    //return res.send(places)
+    res.render('places', {places})
   }
 
   //este código espera si  queremos que se pinte en el usuario o en general 

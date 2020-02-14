@@ -1,3 +1,16 @@
 <h1>
-    ya se pinto una cerveza
+    Cervezas
 </h1>
+
+<p>Cerveza: {{name}}</p>
+<img src="{{image}}" alt="not found">
+<p>Descripción: {{description}}</p>
+
+<h2>Distribuidores de venta</h2>
+{{#each places}}
+
+<p>Lugar: {{this.name}}</p>
+
+<p><a href="/place/{{this._id}}">Ver lugar</a></p>
+
+{{/each}}
