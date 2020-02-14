@@ -27,3 +27,4 @@ Tenemos una pequeña descripción del sabor y si tienes suerte podras encontrar 
 Tenemos los mejores lugares donde venden cerveza Artesanal, agrega una experiencia!
 
 ## Salud
+![alt text](https://raw.githubusercontent.com/Ricardo-leGo/beerPlace/master/public/images/AJO.png)
