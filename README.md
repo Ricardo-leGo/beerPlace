@@ -1,11 +1,5 @@
 # beerPlace
 
-
-
-
-
-# beerPlace
-
 La finalidad de crear esta app,es acercar a las personas a los distintos tipos de cerveza que se comercializan más allá de tiendas de autoservicio la solución es promover y dar a conocertodas esas marcas que se se ofrecen en la ciudad.!!!
 ¿Conoces alguna cerveza buena y no está anunciada?
 ¿Conoces algún lugar donde podemos encontrar?
