@@ -10,7 +10,7 @@ const {
 } = require("../controllers/placeControllers");
 
 router
-.get('/ ', getPlacess)
+.get('/places', getPlacess)
   .get('/create-location', createGet)
   .post('/create-location', createPost)
  .get('/place/:id', placeGet)
