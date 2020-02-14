@@ -1,20 +1,19 @@
 const { model, Schema } = require('mongoose')
-
+ 
 const eventsSchema = new Schema(
   {
-    name: {
+    eventname: {
       type: String,
       required: true
     },
     location: {
-      address: {
-        type: String,
-        required: true
-      },
       coordinates: {
         type: [Number],
-        required: true
+      },
+      address: {
+        type: String,
       }
+   
     },
     author: {
       type: String,
@@ -22,19 +21,17 @@ const eventsSchema = new Schema(
     },
     namePlace: {
       type: String,
-      required: true
     },
     image:{
       type:String,
-      required:true
     },
-    description:String,
-    smallDescription:String
+    description:String
   },
   {
     timestamps: true,
     versionKey: false
   }
 )
+
 
 module.exports = model('events', eventsSchema)

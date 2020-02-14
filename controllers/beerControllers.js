@@ -39,7 +39,7 @@ exports.createPost = async (req, res) => {
   const { _id } = await Beer.create(newBeer)
 
   
-  res.redirect(`/beer/${_id}`)
+  res.redirect('/profile')
 }
 
 exports.beerGet = async (req, res) => {

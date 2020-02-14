@@ -1,14 +1,17 @@
-<form action="/profile" method="POST" id="form_createEvents">
+<form action="/createevents" method="POST" id="form_createEvents">
 <h1>Crea un evento</h1>
-<input type="text" name="eventName" placeholder="Event Name">
+<input type="text" name="eventname" placeholder="Event Name">
 <input type="text" name="author" placeholder="Author">
-<input type="text" name="namePlace" placeholder="Name Place">
-<input type="text" name="image" placeholder="Image">
+<input type="text" name="nameplace" placeholder="Name Place">
+{{!-- <input type="text" name="image" placeholder="Image"> --}}
 <input type="text" name="description" placeholder="Description">
-<input type="text" name="smallDescription">
-<input type="file" name="eventCartel">
+<input type="text" name="eventcartel" placeholder="img">
+
   <div id='map' style='width: 400px; height: 300px;'></div>
-  <input type="text" name="longitude" id="longitude" style="display: none;">
-  <input type="text" name="latitude" id="latitude" style="display: none;">
-  <input type="submit">
+
+
+      <input type="text" name="address" hidden>
+    <input type="text" name="latitude" hidden>
+    <input type="text" name="longitude" hidden>
+      <input type="submit" value="Crear">
 </form>

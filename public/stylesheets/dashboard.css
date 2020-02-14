@@ -1,0 +1,33 @@
+body{
+    overflow-x: hidden;
+}
+#containerCardPlace{
+    
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 0 auto;
+
+
+
+}
+.containerCard{
+width: 20%;
+text-align: center;
+margin: .5% auto;
+box-sizing: border-box;
+
+}
+
+.containerCard>h1{
+    font-size: 1.2rem;
+    width: 100%;
+}
+.containerCard>h2{
+font-size: .7rem;
+width:100%;
+}
+
+.containerCard .mapa{
+    margin: 0 auto;
+}

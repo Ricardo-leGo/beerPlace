@@ -1,0 +1,26 @@
+
+    {{#each location}}
+    <div class="containerCard">
+    <h1>{{this.name}}</h1>
+    <h2>{{this.location.address}}</h2>
+    <input type="text" name="lat" id="" value="{{this.location.coordinates.[0]}}" hidden>
+    <input type="text" name="long" id="" value="{{this.location.coordinates.[1]}}" hidden>
+    <div class="mapa" id= `map{{{this.id}}}` style='width: 200px; height: 100px;'></div>
+    <a href="/dashboard:{{id}}">Ver mas</a>
+<br>
+</div>
+    {{/each}}
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmljYXJkb2xlZ28iLCJhIjoiY2s2ODJzM2NjMDBwZDNucGJyYW93MXVjNiJ9.HDFy3Cv0ahVd2p1oyiLgHA';
+let maps = document.querySelectorAll('.mapa')
+let newArray = {}
+   Array(maps).forEach(map =>{ 
+        map.forEach(el => {newArray[el.id]= new mapboxgl.Map({
+container:  el.id,
+style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-99.1622182, 19.4211955],
+    zoom: 13
+})})}
+)
+</script>
+

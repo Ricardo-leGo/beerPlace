@@ -1,7 +1,3 @@
-
-
-
-
 <div class="containerForms">
     <div class="profileContainer">
     {{> profileBar}}
@@ -10,6 +6,7 @@
     <div class="forms">
         {{!-- {{> ArtesanalBeer}} --}}
         {{> createEvents}}
+        {{> createBeer}}
     </div>
 
 
@@ -27,14 +24,28 @@ style: 'mapbox://styles/mapbox/streets-v11',
     zoom: 13
 })
 
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl,
+countries: 'mx'
+})
+);
+
  map.addControl(new mapboxgl.NavigationControl());
-  map.on("moveend", () => {
-    const { lng, lat } = map.getCenter()
-    const $longitude = document.querySelector('#longitude')
-    const $latitude = document.querySelector('#latitude')
-    $longitude.value = lng
-    $latitude.value = lat
-    console.log( $latitude.value)
-  })
+  map.on('moveend', r => {
+  const {longitude, latitude } = map.getCenter()
+  if (longitude !== 0 || latitude !== 0) {
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map)
+    const address = document.querySelector('input[placeholder="Search"]').value
+    const addressInput = document.querySelector('input[name="address"]')
+    const latInput = document.querySelector('input[name="latitude"]')
+    const lngInput = document.querySelector('input[name="longitude"]')
+    latInput.value = latitude
+    lngInput.value = longitude
+    addressInput.value = address
+  }
+})
+
 </script>
 

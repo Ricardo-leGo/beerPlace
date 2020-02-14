@@ -6,4 +6,44 @@
     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, nihil.<time datetime="2008-02-14 20:00">{{EventName}}</time>Lorem ipsum dolor sit amet.</p>
 {{/if}}
     <p class="smallDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam tempora vero tempore harum labore id corrupti odio cumque autem velit eos animi enim temporibus hic nemo inventore, assumenda magnam error alias necessitatibus ut maxime esse! Nemo maxime harum at dolorum, ex assumenda cum consectetur facere fuga officia officiis reprehenderit error veniam magni temporibus modi accusantium qui corporis minima vel. Recusandae, illo praesentium. Blanditiis officia dicta voluptatibus iure quae optio tempora.</p>
+    <input type="text" name="address" hidden>
+    <input type="text" name="latitude" hidden>
+    <input type="text" name="longitude" hidden>
 </div>
+
+
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicmljYXJkb2xlZ28iLCJhIjoiY2s2ODJzM2NjMDBwZDNucGJyYW93MXVjNiJ9.HDFy3Cv0ahVd2p1oyiLgHA';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-99.1622182, 19.4211955],
+    zoom: 13
+})
+
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl,
+countries: 'mx'
+})
+);
+
+ map.addControl(new mapboxgl.NavigationControl());
+  map.on('moveend', r => {
+  const {longitude, latitude } = map.getCenter()
+  if (longitude !== 0 || latitude !== 0) {
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map)
+    const address = document.querySelector('input[placeholder="Search"]').value
+    const addressInput = document.querySelector('input[name="address"]')
+    const latInput = document.querySelector('input[name="latitude"]')
+    const lngInput = document.querySelector('input[name="longitude"]')
+    latInput.value = latitude
+    lngInput.value = longitude
+    addressInput.value = address
+  }
+})
+
+</script>

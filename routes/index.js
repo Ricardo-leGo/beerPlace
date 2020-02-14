@@ -17,12 +17,21 @@ for (let i = 0; i < 25; i++) {
 }
 
 router.get('/', (req, res, next) => {
+
+
+ 
   let config = {
     menuOut:false,
     styles:'login.css'
 
   }
-  res.render('index', config);
+  let data = {
+    config
+  }
+
+
+
+  res.render('index', data);
 });
 
 router.get('/signup', (req,res,next)=>{
@@ -47,15 +56,27 @@ router.get('/login',(req,res)=> {
 router.get('/dashboard', async (req,res,next)=>{
   const birras = await beers.find()
   const location = await place.find()
-  console.log(location)
-  console.log("****************************************************************************************************************");
-  
-  console.log(birras)
-  res.render('dashboard')
+  let config = {
+    menuOut: false,
+    styles:"dashboard.css"
+  }
+  res.render('dashboard', {birras, location, config})
+})
+
+router.get('/dashboard:id', async (req,res,next)=>{
+  const birras = await beers.find()
+  const location = await place.find()
+  let config = {
+    menuOut: false,
+    styles:"dashboard_details.css"
+  }
+
+  console.log({birras, location, config })
+  res.render('dashboard_details', {birras, location, config})
 })
 
 router.get('/verify',(req,res)=> {
-  res.render('confirm', {message: 'El correo '})
+  res.render('confirm')
 })
 
 

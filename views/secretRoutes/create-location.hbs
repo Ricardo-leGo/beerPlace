@@ -21,6 +21,7 @@
     <input type="text" name="address" hidden>
     <input type="text" name="latitude" hidden>
     <input type="text" name="longitude" hidden>
+    
   </form>
 </section>
 
@@ -28,8 +29,9 @@
   mapboxgl.accessToken = 'pk.eyJ1IjoiZXZpbHZpYyIsImEiOiJjazY4MnBiN3kwMG8xM21uemJvYndkZHJ3In0.Xd19YjoqqQOQa_3PPD62ug';
   const map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11'
-})
+style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-99.1622182, 19.4211955],
+    zoom: 13})
 
 map.addControl(
 new MapboxGeocoder({
