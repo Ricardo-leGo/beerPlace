@@ -13,13 +13,11 @@ exports.createGet = (req, res) => {
         coordinates: [longitude, latitude]
       },
     }
-    //console.log(newPlace)
     const { _id } = await Place.create(newLocation)
     res.redirect(`/place/${_id}`)
   }
   
   exports.placeGet = async (req, res) => {
-    //console.log(req.params)
     const { id } = req.params
     const place = await Place.findById(id).populate('beers')
     console.log('Place aqui', place);

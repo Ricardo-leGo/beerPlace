@@ -14,6 +14,5 @@ router
   .post('/create-Beer', createPost)
   .get('/beer/:id', beerGet)
   .get('/beers', beersGet)
-  //.get('/profile', profileGet)
 
 module.exports = router;

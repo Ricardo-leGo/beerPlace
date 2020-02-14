@@ -1,7 +1,21 @@
-Placesssssss
+<style>
+.containerPal{
+    width: 90vh;
+    margin:0 auto;
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+</style>
+
+
+
+<div class="containerPal">
+<h1>Lugares</h1>
 {{#each places}}
     <p><b>Nombre:</b>{{ this.name}} </p>
     <p><b>Direccion:</b>{{ this.location.address }}</p><br>
     <p><a href="/place/{{this._id}}">Ver Lugar</a></p>
-
+    <hr>
 {{/each}}
+</div>

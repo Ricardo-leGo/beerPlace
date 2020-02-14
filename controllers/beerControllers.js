@@ -39,16 +39,9 @@ exports.createPost = async (req, res) => {
   places.forEach( async place => {
     await Place.updateOne({_id: place}, {$push: {beers: newBeer._id}}, {new: true})
   })
-  
-  //console.log(newPlace)
-  // const {} = await Beer.create(newBeer)
 
   
-<<<<<<< HEAD
   res.redirect('/profile')
-=======
-  res.redirect(`/beer/${newBeer._id}`)
->>>>>>> 1e14945dbb9bcb49b6f0084f9984a5544ffddab3
 }
 
 exports.beerGet = async (req, res) => {
@@ -61,7 +54,6 @@ exports.beerGet = async (req, res) => {
 
 exports.beersGet = async (req, res) =>{
   const beers = await Beer.find()
-  //console.log(beers);
   
   res.render('beers', {beers})
 }
