@@ -47,7 +47,7 @@ text-align: center;
 #submitregister{
     padding-right: 0%;
     width: 60%;
-    background-color: #ee6e73;
+    background-color: #0d6161;
     color:#fed;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 
@@ -83,7 +83,13 @@ text-align: center;
 #logSubmit{
     margin-right:20%;
     color: #fed;
-    background-color: #ee6e73;
+    background-color: #0d6161;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 
+}
+
+.imagenfondo{
+
+    background-image: url('https://raw.githubusercontent.com/Ricardo-leGo/beerPlace/master/public/images/AJO.png');
+    background-size: cover;
 }

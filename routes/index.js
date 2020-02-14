@@ -71,15 +71,9 @@ router.get('/dashboard', async (req,res,next)=>{
 
 router.get('/dashboard:id', async (req,res,next)=>{
   const birras = await beers.find()
-  console.log(birras);
   
-  console.log('*****************************************************************************')
   const location = await place.find()
-  console.log(location)  
-  console.log('*****************************************************************************')
   const event = await events.find()
-  console.log(event)
-  console.log('*****************************************************************************')
   let config = {
     menuOut: false,
     styles:"dashboard_details.css",
