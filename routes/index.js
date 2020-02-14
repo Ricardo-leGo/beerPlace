@@ -128,7 +128,7 @@ router.post('/signup', (req,res,next)=> {
 
       confirmAccount(
         email, 
-         `http://localhost:3000/verify:${token}`)
+         `https://beerplace.herokuapp.com/`)
       
       })
 
